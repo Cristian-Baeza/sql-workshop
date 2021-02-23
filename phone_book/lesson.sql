@@ -21,7 +21,9 @@ where phone='579-804-9800';
 
 -- Exercise 1:
 --   1.1 Find phone number for Lauri Abshire.
+            -- 675-281-8695
 --   1.2 Find who has the phone number 363-350-4983.
+            -- Samatha Hermann
 
 -- Now what happens if we only know someone's first name? The `%` is the
 -- wildcard character for a LIKE pattern. It matches any number of any character.
@@ -31,12 +33,15 @@ where name like 'Tammi%';
 
 -- Exercise 2:
 --   2.1 Find phone number for the last name of Hermann.
+        -- Samatha Hermann: 363-350-4983
 
 -- ILIKE is used to search case-insensitively.
 
 select name, phone
 from contacts
 where name ilike '%dare';
+-- Karri Dare
+
 
 -- The INSERT statement is used to insert rows into a table.
 insert into contacts(name, phone) values ('John Smith', '432-422-4945');
@@ -56,9 +61,11 @@ where name='Simonne Bayer';
 
 -- Exercise 3:
 --   3.1 Change John Smith's phone number to 212-987-2342
+--      DONE
 
 -- Lastly, let's delete a record.
 delete from contacts where name='Kaylene Bahringer';
+-- DONE
 
 -- Notice that SELECT, UPDATE, and DELETE all allow a WHERE clause. It is very
 -- important to include a WHERE clause on UPDATE and DELETE statements.
@@ -78,6 +85,7 @@ select *
 from contacts
 order by name
 limit 5;
+-- Is there a default limit??
 
 -- We are starting to run into a problem with how to tell rows apart. People can
 -- share names. They can also share phone numbers. We need some way uniquely
@@ -140,7 +148,7 @@ returning id;
 
 -- How do we make these two tables work together?
 
--- The simplest join is CROSS JOIN.
+-- The simplest join is CROSS JOIN. (NOT VERY USEFUL. WILL RARELY USE)
 select *
 from contacts
   cross join calls;
